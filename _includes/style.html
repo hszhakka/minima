@@ -1,0 +1,19 @@
+<script>
+  const date = new Date();
+  const hour = date.getHours();
+
+  let fileName = "{{ '/assets/css/style.css' | relative_url }}";
+  if ((hour >= 6 && hour < 8) || (hour >= 16 && hour < 18)) {
+    fileName = "{{ '/assets/css/style-solarized.css' | relative_url }}";
+  } else if (hour >= 18 || hour < 6) {
+    fileName = "{{ '/assets/css/style-solarized-dark.css' | relative_url }}";
+  } else {
+    fileName = "{{ '/assets/css/style-classic.css' | relative_url }}";
+  }
+
+  const link = document.createElement("link");
+  link.type = "text/css";
+  link.rel = "stylesheet";
+  link.href = fileName;
+  document.head.appendChild(link);
+</script>
