@@ -9,10 +9,15 @@ layout: default
 
   {{ content }}
 
-  {%- if site.posts.size > 0 -%}
+  {%- assign posts = site.posts -%}
+  {%- if site.paginate -%}
+    {%- assign posts = paginator.posts -%}
+  {%- endif -%}
+
+  {%- if posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
     <ul class="post-list">
-      {%- for post in site.posts -%}
+      {%- for post in posts -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -27,6 +32,10 @@ layout: default
       </li>
       {%- endfor -%}
     </ul>
+
+    {%- if site.paginate -%}
+      {%- include paginate.html -%}
+    {%- endif -%}
 
     <p class="feed-subscribe">
       <a href="{{ 'feed.xml' | relative_url }}">

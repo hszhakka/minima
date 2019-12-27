@@ -1,0 +1,15 @@
+<div class="pagination">
+  {%- if paginator.previous_page -%}
+    <a href="{{ paginator.previous_page_path }}" class="previous">&laquo;</a>
+  {%- else -%}
+    <a href="#" class="first">&laquo;</a>
+  {%- endif -%}
+
+  <span class="page-number">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+
+  {%- if paginator.next_page -%}
+    <a href="{{ paginator.next_page_path }}" class="next">&raquo;</a>
+  {%- else -%}
+    <a href="#" class="last">&raquo;</a>
+  {%- endif -%}
+</div>

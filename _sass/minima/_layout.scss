@@ -326,6 +326,45 @@ a img.align-left {
 }
 
 /**
+ * Pagination
+ */
+.pagination {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  .page-number {
+    border: 1px solid;
+    padding: 1px 8px 2px 8px;
+  }
+
+  a.previous, a.next, a.first, a.last {
+    color: $text-color;
+    border: 1px solid;
+    padding: 1px 8px 2px 8px;
+
+    &:hover {
+      text-decoration: none;
+      background-color: mix($background-color, $text-color);
+    }
+  }
+
+  a.previous {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+
+  a.next {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+
+  a.first, a.last {
+    background-color: mix($background-color, $text-color);
+  }
+}
+
+/**
  * Grid helpers
  */
 @media screen and (min-width: $on-large) {
