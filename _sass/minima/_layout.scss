@@ -349,12 +349,12 @@ a img.align-left {
     }
   }
 
-  a.previous {
+  a.previous, a.first {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
   }
 
-  a.next {
+  a.next, a.last {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
   }
