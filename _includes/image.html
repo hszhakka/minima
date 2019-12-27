@@ -1,4 +1,8 @@
-<figure class="image">
-  <img src="{{ include.url }}" alt="{{ include.description }}" width="{{ include.width | default: 100% }}">
-  <figcaption>{{ include.description }}</figcaption>
+{%- assign align = "center" -%}
+{%- if include.align -%}
+  {%- assign align = include.align -%}
+{%- endif -%}
+<figure class="align-{{ align }}">
+  <img class="align-{{ align }}" src="{{ include.url | absolute_url }}" alt="{{ include.description }}" width="{{ include.width | default: 100% }}">
+  <figcaption class="align-{{ align }}">{{ include.description }}</figcaption>
 </figure>

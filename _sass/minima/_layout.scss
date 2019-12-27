@@ -288,6 +288,42 @@
   }
 }
 
+/**
+ * Alignment
+ */
+.align-center,
+div.align-center,
+a img.align-center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+figure.align-center {
+  img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+}
+
+.align-right,
+a img.align-right {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  float: right;
+}
+
+.align-left,
+a img.align-left {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  float: left;
+}
 
 /**
  * Grid helpers
