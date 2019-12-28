@@ -20,9 +20,30 @@ layout: page
       {%- if posts.size == i -%}
         <li>
           {%- capture tag_url -%}/tags/{{ tag_name | slugify }}.html{%- endcapture -%}
-          <a href="{{ tag_url | relative_url }}" title="{{ posts.size }}">{{ tag_name }}</a>
+          <a class="site-tag" href="{{ tag_url | relative_url }}" title="{{ posts.size }}" data-count="{{ posts.size }}">{{ tag_name }}</a>
         </li>
       {%- endif -%}
     {%- endfor -%}
   {%- endfor -%}
 </ul>
+
+<script>
+  let allCounts = 0;
+
+  const elements = document.getElementsByClassName("site-tag");
+  for (let element of elements) {
+    const count = parseInt(element.dataset.count);
+    allCounts += count;
+  }
+
+  const averageCount = allCounts / elements.length;
+
+  const style = getComputedStyle(document.querySelector("body"));
+  const baseFontSize = parseInt(style.fontSize);
+
+  for (let element of elements) {
+    const count = parseInt(element.dataset.count);
+    const fontSize = baseFontSize + count - Math.floor(averageCount);
+    element.style.fontSize = `${fontSize}px`;
+  }
+</script>

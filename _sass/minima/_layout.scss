@@ -373,7 +373,7 @@ ul.site-tags {
     margin-left: 0;
     display: inline-block;
 
-    > a {
+    > a.site-tag {
       text-decoration: none;
       color: $text-color;
       background-color: mix($background-color, $text-color, 70%);
