@@ -20,7 +20,7 @@ layout: page
       {%- if posts.size == i -%}
         <li>
           {%- capture tag_url -%}/tags/{{ tag_name | slugify }}.html{%- endcapture -%}
-          <a href="{{ tag_url | relative_url }}">{{ tag_name }}</a> <small>{{ posts.size }}</small>
+          <a href="{{ tag_url | relative_url }}" title="{{ posts.size }}">{{ tag_name }}</a>
         </li>
       {%- endif -%}
     {%- endfor -%}
