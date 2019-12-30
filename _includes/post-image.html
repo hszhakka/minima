@@ -1,0 +1,15 @@
+{%- assign root = site.data.post_image_root | default: "/assets/images/posts" -%}
+{%- if page.slug -%}
+  {%- assign slug = page.slug -%}
+{%- else -%}
+  {%- assign slug = page.title | slugify -%}
+{%- endif -%}
+{%- assign align = "center" -%}
+{%- if include.align -%}
+  {%- assign align = include.align -%}
+{%- endif -%}
+<figure class="align-{{ align }}">
+  {% capture url %}{{ root }}/{{ slug }}/{{ include.name }}{% endcapture %}
+  <img class="align-{{ align }}" src="{{ url | absolute_url }}" alt="{{ include.description }}" width="{{ include.width | default: 100% }}">
+  <figcaption class="align-{{ align }}">{{ include.description }}</figcaption>
+</figure>
