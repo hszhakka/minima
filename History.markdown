@@ -4,6 +4,7 @@
 
   * Forward port v2.5.1 release (#399)
   * Docs: remove Google+ (#373)
+  * Update README section on adding favicons to site (#438)
 
 ### Minor Enhancements
 
@@ -11,6 +12,8 @@
   * Solarized skins (#404)
   * Add a placeholder of favicons (#433)
   * fix: make page.list_title optional (#303)
+  * Add stackoverflow to social media list (#443)
+  * Add social support for dev.to (#410)
 
 ### Major Enhancements
 
