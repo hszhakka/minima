@@ -309,15 +309,15 @@
   text-decoration: none;
   border: 1px solid;
   border-radius: 3px;
-  padding: 1px 8px 2px 8px;
+  padding: 0px 3px 1px 4px;
 }
 
-ul.tag-list {
+.tag-list {
   list-style: none;
 
   li {
     display: inline;
-    margin-right: 3px;
+    margin-right: 1px;
   }
 
   a {
@@ -325,6 +325,32 @@ ul.tag-list {
   }
 }
 
+.post-tags {
+  .svg-icon, .tag-list {
+    display: inline;
+  }
+
+  .tag-list {
+    margin-left: 0;
+  }
+}
+
 .category {
   text-decoration: underline;
+}
+
+.post-categories {
+  .svg-icon, .category-list {
+    display: inline;
+  }
+
+  .category-list {
+    list-style: none;
+    margin-left: 0;
+
+    li {
+      display: inline;
+      margin-right: 3px;
+    }
+  }
 }
