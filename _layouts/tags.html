@@ -31,3 +31,18 @@ layout: page
 <script src="{{ '/assets/js/tag-color.js' | absolute_url }}"></script>
 <script src="{{ '/assets/js/tag-size.js' | absolute_url }}"></script>
 
+{%- for i in (1..max_count) reversed -%}
+  {%- for tag in site.tags -%}
+    {%- assign tag_name = tag[0] -%}
+    {%- assign posts = tag[1] -%}
+    {%- if posts.size == i -%}
+      <h3>{{ tag_name }}</h3>
+      <ul>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {%- for post in posts -%}
+          <li>{{ post.date | date: date_format }} &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
