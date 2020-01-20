@@ -1,0 +1,10 @@
+<div class="post-tags-wrapper">
+  <span class="post-tags">
+    <svg class="svg-icon grey"><use xlink:href="{{ 'assets/minima-label-icons.svg#tags' | relative_url }}"></use></svg>
+    <ul class="post-tags-list">
+      {%- for tag in page.tags -%}
+        <li><span class="post-tag">{{ tag }}</span></li>
+      {%- endfor -%}
+    </ul>
+  </span>
+</div>

@@ -19,6 +19,18 @@ layout: default
     {{ content }}
   </div>
 
+  <footer class="post-footer">
+    <div class="post-meta">
+      {%- if page.categories.size > 0 -%}
+        {%- include post-categories.html -%}
+      {%- endif -%}
+
+      {%- if page.tags.size > 0 -%}
+        {%- include post-tags.html -%}
+      {%- endif -%}
+    </div>
+  </footer>
+
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}

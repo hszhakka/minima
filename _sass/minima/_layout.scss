@@ -273,6 +273,38 @@
   }
 }
 
+.post-categories,
+.post-tags {
+  .svg-icon {
+    margin-left: 0;
+  }
+}
+
+ul.post-categories-list,
+ul.post-tags-list {
+  display: inline;
+  list-style: none;
+  margin-left: 0;
+
+  li {
+    display: inline;
+    margin-right: 3px;
+    padding: 0px 6px 0px 6px;
+  }
+}
+
+ul.post-categories-list {
+  li {
+    text-decoration: underline;
+  }
+}
+
+ul.post-tags-list {
+  li {
+    border: 1px solid;
+    border-radius: 3px;
+  }
+}
 
 .social-media-list {
   display: table;

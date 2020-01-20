@@ -1,0 +1,10 @@
+<div class="post-categories-wrapper">
+  <span class="post-categories">
+    <svg class="svg-icon grey"><use xlink:href="{{ 'assets/minima-label-icons.svg#folder-open' | relative_url }}"></use></svg>
+    <ul class="post-categories-list">
+      {%- for category in page.categories -%}
+        <li><span class="post-category">{{ category }}</span></li>
+      {%- endfor -%}
+    </ul>
+  </span>
+</div>
