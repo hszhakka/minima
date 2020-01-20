@@ -2,7 +2,8 @@
   <span class="post-tags">
     <svg class="svg-icon grey"><use xlink:href="{{ 'assets/minima-label-icons.svg#tags' | relative_url }}"></use></svg>
     <ul class="post-tags-list">
-      {%- for tag in page.tags -%}
+      {%- assign tags = page.tags | sort -%}
+      {%- for tag in tags -%}
         <li><span class="post-tag">{{ tag }}</span></li>
       {%- endfor -%}
     </ul>
