@@ -1,10 +1,11 @@
 <div class="post-categories-wrapper">
   <span class="post-categories">
     <svg class="svg-icon grey"><use xlink:href="{{ 'assets/minima-label-icons.svg#folder-open' | relative_url }}"></use></svg>
-    <ul class="post-categories-list">
+    <ul class="category-list">
       {%- assign categories = page.categories | sort -%}
       {%- for category in categories -%}
-        <li><span class="post-category">{{ category }}</span></li>
+        {%- capture category_url -%}/categories/#{{ category_name | slugify }}{%- endcapture -%}
+        <li><a class="category" href="{{ category_url | relative_url }}">{{ category }}</a></li>
       {%- endfor -%}
     </ul>
   </span>

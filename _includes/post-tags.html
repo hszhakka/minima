@@ -1,10 +1,11 @@
 <div class="post-tags-wrapper">
   <span class="post-tags">
     <svg class="svg-icon grey"><use xlink:href="{{ 'assets/minima-label-icons.svg#tags' | relative_url }}"></use></svg>
-    <ul class="post-tags-list">
+    <ul class="tag-list">
       {%- assign tags = page.tags | sort -%}
       {%- for tag in tags -%}
-        <li><span class="post-tag">{{ tag }}</span></li>
+        {%- capture tag_url -%}/tags/#{{ tag | slugify }}{%- endcapture -%}
+        <li><a class="tag" href="{{ tag_url | relative_url }}">{{ tag }}</a></li>
       {%- endfor -%}
     </ul>
   </span>

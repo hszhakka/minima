@@ -12,15 +12,15 @@ layout: page
   {%- endif -%}
 {%- endfor -%}
 
-<ul class="site-categories">
+<ul class="category-list">
   {%- for i in (1..max_count) reversed -%}
     {%- for category in site.categories -%}
       {%- assign category_name = category[0] -%}
       {%- assign posts = category[1] -%}
       {%- if posts.size == i -%}
         <li>
-          {%- capture category_url -%}/categories/{{ category_name | slugify }}.html{%- endcapture -%}
-          <a href="{{ category_url | relative_url }}">{{ category_name }}</a> <small>{{ posts.size }}</small>
+          {%- capture category_url -%}/categories/#{{ category_name | slugify }}{%- endcapture -%}
+          <a class="category" href="{{ category_url | relative_url }}">{{ category_name }}</a> <small>{{ posts.size }}</small>
         </li>
       {%- endif -%}
     {%- endfor -%}
