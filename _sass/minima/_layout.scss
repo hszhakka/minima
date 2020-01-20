@@ -306,6 +306,22 @@ ul.post-tags-list {
   }
 }
 
+ul.site-tags {
+  li {
+    list-style: none;
+    margin-left: 0;
+    display: inline-block;
+
+    > a.site-tag {
+      text-decoration: none;
+      border: 1px solid;
+      border-radius: 3px;
+      padding: 1px 8px 2px 8px;
+      margin-right: 3px;
+    }
+  }
+}
+
 .social-media-list {
   display: table;
   margin: 0 auto;
