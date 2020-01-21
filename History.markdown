@@ -14,6 +14,8 @@
   * fix: make page.list_title optional (#303)
   * Add stackoverflow to social media list (#443)
   * Add social support for dev.to (#410)
+  * Add GitLab to social (#352)
+  * Support mutiple authors on post layout (#348)
 
 ### Major Enhancements
 
@@ -29,6 +31,7 @@
   * Use &#34;rem&#34; unit in relative-font-size mixin (#436)
   * Assign static value to variable outside forloop (#437)
   * Add font-size styles for elements h5 and h6 (#441)
+  * Stop prefixing CSS calc with `-webkit-` (#445)
 
 ### Development Fixes
 
