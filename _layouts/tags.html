@@ -36,7 +36,7 @@ layout: page
     {%- assign tag_name = tag[0] -%}
     {%- assign posts = tag[1] -%}
     {%- if posts.size == i -%}
-      <h3>{{ tag_name }}</h3>
+      <h3 id="{{ tag_name | slugify }}">{{ tag_name }}</h3>
       <ul>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {%- for post in posts -%}

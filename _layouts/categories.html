@@ -32,7 +32,7 @@ layout: page
     {%- assign category_name = category[0] -%}
     {%- assign posts = category[1] -%}
     {%- if posts.size == i -%}
-      <h3>{{ category_name }}</h3>
+      <h3 id="{{ category_name | slugify }}">{{ category_name }}</h3>
       <ul>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {%- for post in posts -%}
