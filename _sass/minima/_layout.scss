@@ -267,6 +267,7 @@
   }
 }
 
+
 .social-media-list {
   display: table;
   margin: 0 auto;
@@ -298,7 +299,7 @@
 /**
  * Taxonomies
  */
- .tag {
+.tag {
   text-decoration: none;
   border: 1px solid;
   border-radius: 3px;
@@ -323,29 +324,17 @@
     display: inline;
   }
 
-  .tag-list {
+  > ul {
     margin-left: 0;
   }
-}
 
-.category {
-  text-decoration: underline;
-  padding: 0px 3px 1px 4px;
-}
-
-.post-categories {
-  .svg-icon, .category-list {
-    display: inline;
-  }
-
-  .category-list {
-    list-style: none;
-    margin-left: 0;
-
-    li {
-      display: inline;
-      margin-right: 3px;
-    }
+  @include media-query($on-huge) {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    max-height: auto;
+    margin-bottom: $spacing-unit;
   }
 }
 
