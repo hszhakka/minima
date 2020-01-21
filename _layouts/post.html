@@ -19,12 +19,14 @@ layout: default
       {%- endif -%}</p>
   </header>
 
-  <nav class="toc-navigation">
-    <h2>Table of Contents</h2>
-    <ul class="toc">
-      {%- include toc.html html=content -%}
-    </ul>
-  </nav>
+  {%- if page.toc -%}
+    <nav class="toc-navigation">
+      <h2>Table of Contents</h2>
+      <ul class="toc">
+        {%- include toc.html html=content -%}
+      </ul>
+    </nav>
+  {%- endif -%}
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
