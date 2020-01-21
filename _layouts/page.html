@@ -7,6 +7,13 @@ layout: default
     <h1 class="post-title">{{ page.title | escape }}</h1>
   </header>
 
+  <nav class="toc-navigation">
+    <h2>Table of Contents</h2>
+    <ul class="toc">
+      {%- include toc.html html=content -%}
+    </ul>
+  </nav>
+
   <div class="post-content">
     {{ content }}
   </div>

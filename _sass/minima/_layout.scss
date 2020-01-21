@@ -267,6 +267,7 @@
   }
 }
 
+
 .social-media-list {
   display: table;
   margin: 0 auto;
@@ -294,57 +295,29 @@
   }
 }
 
+.toc-navigation {
+  background-color: mix($background-color, $text-color, 90%);
+  padding: 8px 8px 8px 8px;
+  border-radius: 8px;
+  overflow: scroll;
 
-/**
- * Taxonomies
- */
-.tag {
-  text-decoration: none;
-  border: 1px solid;
-  border-radius: 3px;
-  padding: 0px 3px 1px 4px;
-}
+  position: fixed;
+  z-index: 1;
+  left: $spacing-unit;
+  top: $spacing-unit * 4;
+  width: calc((100vw - #{$content-width}) / 2 - #{$spacing-unit} * 2);
+  max-height: calc(50vh);
 
-.tag-list {
-  list-style: none;
-
-  li {
-    display: inline;
-    margin-right: 1px;
-  }
-
-  a {
-    text-decoration: none;
-  }
-}
-
-.post-tags {
-  .svg-icon, .tag-list {
-    display: inline;
-  }
-
-  .tag-list {
+  > ul {
     margin-left: 0;
   }
-}
 
-.category {
-  text-decoration: underline;
-  padding: 0px 3px 1px 4px;
-}
-
-.post-categories {
-  .svg-icon, .category-list {
-    display: inline;
-  }
-
-  .category-list {
-    list-style: none;
-    margin-left: 0;
-
-    li {
-      display: inline;
-      margin-right: 3px;
-    }
+  @include media-query($on-huge) {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    max-height: auto;
+    margin-bottom: $spacing-unit;
   }
 }
