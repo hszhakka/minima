@@ -19,6 +19,15 @@ layout: default
       {%- endif -%}</p>
   </header>
 
+  {%- if page.toc -%}
+    <nav class="toc-navigation">
+      <h2>Table of Contents</h2>
+      <ul class="toc">
+        {%- include toc.html html=content -%}
+      </ul>
+    </nav>
+  {%- endif -%}
+
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
@@ -34,7 +43,7 @@ layout: default
       {%- endif -%}
     </div>
   </footer>
-
+  
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
