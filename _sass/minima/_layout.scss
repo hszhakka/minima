@@ -308,6 +308,7 @@
 
 .tag-list {
   list-style: none;
+  margin-bottom: $spacing-unit;
 
   li {
     display: inline;
@@ -324,23 +325,18 @@
     display: inline;
   }
 
-  > ul {
+  .tag-list {
     margin-left: 0;
-  }
-
-  @include media-query($on-huge) {
-    position: relative;
-    left: auto;
-    top: auto;
-    width: auto;
-    max-height: auto;
-    margin-bottom: $spacing-unit;
   }
 }
 
 .category {
   text-decoration: underline;
   padding: 0px 3px 1px 4px;
+}
+
+.category-list {
+  margin-bottom: $spacing-unit;
 }
 
 .post-categories {
@@ -358,7 +354,6 @@
     }
   }
 }
-
 
 /**
  * TOC
