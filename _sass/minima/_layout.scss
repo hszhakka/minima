@@ -338,6 +338,31 @@
   }
 }
 
+.category {
+  text-decoration: underline;
+  padding: 0px 3px 1px 4px;
+}
+
+.post-categories {
+  .svg-icon, .category-list {
+    display: inline;
+  }
+
+  .category-list {
+    list-style: none;
+    margin-left: 0;
+
+    li {
+      display: inline;
+      margin-right: 3px;
+    }
+  }
+}
+
+
+/**
+ * TOC
+ */
 .toc-navigation {
   background-color: mix($background-color, $text-color, 90%);
   padding: 8px 8px 8px 8px;
