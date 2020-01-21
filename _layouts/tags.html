@@ -19,9 +19,9 @@ layout: page
       {%- assign posts = tag[1] -%}
       {%- if posts.size == i -%}
         <li>
-          {%- capture tag_url -%}/tags/#{{ tag_name | slugify }}{%- endcapture -%}
+          {%- capture tag_url -%}{{ site.minima.tags_url }}#{{ tag_name | slugify }}{%- endcapture -%}
           {%- capture title -%}{{ posts.size }} {% if posts.size == 1 %}post{% else %}posts{% endif %}{%- endcapture -%}
-          <a class="tag" href="{{ tag_url | relative_url }}" title="{{ title }}" data-count="{{ posts.size }}">{{ tag_name }}</a>
+          <a class="tag" href="{{ tag_url | absolute_url }}" title="{{ title }}" data-count="{{ posts.size }}">{{ tag_name }}</a>
         </li>
       {%- endif -%}
     {%- endfor -%}

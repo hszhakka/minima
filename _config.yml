@@ -13,6 +13,10 @@ show_excerpts: false # set to true to show excerpts on the homepage
 minima:
   date_format: "%b %-d, %Y"
 
+  categories_url: /categories/
+  tags_url: /tags/
+
+
   # generate social links in footer
   social_links:
     twitter: jekyllrb

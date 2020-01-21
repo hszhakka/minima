@@ -4,8 +4,8 @@
     <ul class="tag-list">
       {%- assign tags = page.tags | sort -%}
       {%- for tag in tags -%}
-        {%- capture tag_url -%}/tags/#{{ tag | slugify }}{%- endcapture -%}
-        <li><a class="tag" href="{{ tag_url | relative_url }}">{{ tag }}</a></li>
+        {%- capture tag_url -%}{{ site.minima.tags_url }}#{{ tag | slugify }}{%- endcapture -%}
+        <li><a class="tag" href="{{ tag_url | absolute_url }}">{{ tag }}</a></li>
       {%- endfor -%}
     </ul>
   </span>
