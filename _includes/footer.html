@@ -16,6 +16,9 @@
           {%- endif %}
         </ul>
       {%- endif %}
+      {%- if site.copyright -%}
+        {% include copyright.html %}
+      {%- endif -%}
       </div>
       <div class="footer-col">
         <p>{{ site.description | escape }}</p>
