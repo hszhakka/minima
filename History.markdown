@@ -17,6 +17,8 @@
   * Add GitLab to social (#352)
   * Support mutiple authors on post layout (#348)
   * Re-implement site footer markup and styles (#448)
+  * Support pagination through posts in home layout (#450)
+  * Show the last modified date of posts (#432)
 
 ### Major Enhancements
 
@@ -34,6 +36,7 @@
   * Assign static value to variable outside forloop (#437)
   * Add font-size styles for elements h5 and h6 (#441)
   * Stop prefixing CSS calc with `-webkit-` (#445)
+  * Improve readability of post titles with diacritics (#449)
 
 ### Development Fixes
 
