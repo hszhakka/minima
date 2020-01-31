@@ -34,9 +34,8 @@ layout: page
     {%- if posts.size == i -%}
       <h3 id="{{ category_name | slugify }}">{{ category_name }}</h3>
       <ul>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {%- for post in posts -%}
-          <li>{{ post.date | date: date_format }} &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+          <li>{{ post.date | date: "%Y-%m-%d" }} &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
         {%- endfor -%}
       </ul>
     {%- endif -%}
