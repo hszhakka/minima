@@ -420,7 +420,7 @@
   overflow: scroll;
 
   position: fixed;
-  z-index: 1;
+  z-index: -1;
   left: $spacing-unit;
   top: $spacing-unit * 4;
   width: calc((100vw - #{$content-width}) / 2 - #{$spacing-unit} * 2);
