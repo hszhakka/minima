@@ -27,12 +27,12 @@ layout: default
   </header>
 
   {%- if page.toc -%}
-    <nav class="toc-navigation">
+    <div class="toc-wrapper">
       <h2>Table of Contents</h2>
-      <div class="toc">
+      <nav class="toc">
         {%- include toc.html html=content -%}
-      </div>
-    </nav>
+      </nav>
+    </div>
   {%- endif -%}
 
   <div class="post-content e-content" itemprop="articleBody">

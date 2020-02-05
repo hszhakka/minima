@@ -414,28 +414,36 @@
 /**
  * TOC
  */
-.toc-navigation {
+.toc-wrapper {
+  @include relative-font-size(0.85);
+
   background-color: mix($background-color, $text-color, 90%);
   padding: 8px 8px 8px 8px;
   border-radius: 8px;
-  overflow: scroll;
-
   position: fixed;
   left: $spacing-unit;
-  top: $spacing-unit * 4;
+  top: $spacing-unit * 3.5;
   width: calc((100vw - #{$content-width}) / 2 - #{$spacing-unit} * 2);
-  max-height: calc(50vh);
-
-  > ul {
-    margin-left: 0;
-  }
 
   @include media-query($on-huge) {
     position: relative;
     left: auto;
     top: auto;
     width: auto;
-    max-height: auto;
     margin-bottom: $spacing-unit;
+  }
+}
+
+.toc {
+  margin: 5px 5px 5px 5px;
+  max-height: calc(40vh);
+  overflow: scroll;
+
+  ul {
+    margin-left: $spacing-unit / 2;
+  }
+
+  @include media-query($on-huge) {
+    max-height: auto;
   }
 }
