@@ -1,12 +1,10 @@
 <div class="post-categories-wrapper">
-  <span class="post-categories">
-    <svg class="svg-icon grey"><use xlink:href="{{ 'assets/minima-label-icons.svg#folder-open' | relative_url }}"></use></svg>
-    <ul class="category-list">
-      {%- assign categories = page.categories | sort -%}
-      {%- for category in categories -%}
-        {%- capture category_url -%}{{ site.minima.categories_url }}#{{ category | slugify }}{%- endcapture -%}
-        <li><a class="category" href="{{ category_url | absolute_url }}">{{ category }}</a></li>
-      {%- endfor -%}
-    </ul>
+  <svg class="svg-icon grey"><use xlink:href="{{ 'assets/minima-label-icons.svg#folder-open' | relative_url }}"></use></svg>
+  <span class="category-list">
+    {%- assign categories = page.categories | sort -%}
+    {%- for category in categories -%}
+      {%- capture category_url -%}{{ site.minima.categories_url }}#{{ category | slugify }}{%- endcapture -%}
+      <a class="category" href="{{ category_url | absolute_url }}">{{ category }}</a>
+    {%- endfor -%}
   </span>
 </div>

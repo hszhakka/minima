@@ -351,64 +351,33 @@
   }
 }
 
-
 /**
  * Taxonomies
  */
-.tag {
-  text-decoration: none;
-  border: 1px solid;
-  border-radius: 3px;
-  padding: 0px 3px 1px 4px;
-}
-
 .tag-list {
-  list-style: none;
-  margin-bottom: $spacing-unit;
-
-  li {
-    display: inline;
-    margin-right: 1px;
-  }
-
-  a {
+  .tag {
     text-decoration: none;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 0px 3px 1px 4px;
+    margin-right: 2px;
   }
 }
 
-.post-tags {
-  .svg-icon, .tag-list {
-    display: inline;
-  }
-
-  .tag-list {
-    margin-left: 0;
-  }
-}
-
-.category {
-  text-decoration: underline;
-  padding: 0px 3px 1px 4px;
+.site-tags-wrapper {
+  margin-bottom: $spacing-unit;
 }
 
 .category-list {
-  margin-bottom: $spacing-unit;
+  .category {
+    text-decoration: underline;
+    padding: 0px 3px 1px 4px;
+    margin-right: 2px;
+  }
 }
 
-.post-categories {
-  .svg-icon, .category-list {
-    display: inline;
-  }
-
-  .category-list {
-    list-style: none;
-    margin-left: 0;
-
-    li {
-      display: inline;
-      margin-right: 3px;
-    }
-  }
+.site-categories-wrapper {
+  margin-bottom: $spacing-unit;
 }
 
 /**

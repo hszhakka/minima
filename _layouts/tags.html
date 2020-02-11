@@ -12,21 +12,21 @@ layout: page
   {%- endif -%}
 {%- endfor -%}
 
-<ul class="tag-list">
-  {%- for i in (1..max_count) reversed -%}
-    {%- for tag in site.tags -%}
-      {%- assign tag_name = tag[0] -%}
-      {%- assign posts = tag[1] -%}
-      {%- if posts.size == i -%}
-        <li>
+<div class="site-tags-wrapper">
+  <span class="tag-list">
+    {%- for i in (1..max_count) reversed -%}
+      {%- for tag in site.tags -%}
+        {%- assign tag_name = tag[0] -%}
+        {%- assign posts = tag[1] -%}
+        {%- if posts.size == i -%}
           {%- capture tag_url -%}{{ site.minima.tags_url }}#{{ tag_name | slugify }}{%- endcapture -%}
           {%- capture title -%}{{ posts.size }} {% if posts.size == 1 %}post{% else %}posts{% endif %}{%- endcapture -%}
           <a class="tag" href="{{ tag_url | absolute_url }}" title="{{ title }}" data-count="{{ posts.size }}">{{ tag_name }}</a>
-        </li>
-      {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
     {%- endfor -%}
-  {%- endfor -%}
-</ul>
+  </span>
+</div>
 
 <script src="{{ '/assets/js/tag-color.js' | absolute_url }}"></script>
 <script src="{{ '/assets/js/tag-size.js' | absolute_url }}"></script>

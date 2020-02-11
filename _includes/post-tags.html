@@ -1,13 +1,11 @@
 <div class="post-tags-wrapper">
-  <span class="post-tags">
-    <svg class="svg-icon grey"><use xlink:href="{{ 'assets/minima-label-icons.svg#tags' | relative_url }}"></use></svg>
-    <ul class="tag-list">
-      {%- assign tags = page.tags | sort -%}
-      {%- for tag in tags -%}
-        {%- capture tag_url -%}{{ site.minima.tags_url }}#{{ tag | slugify }}{%- endcapture -%}
-        <li><a class="tag" href="{{ tag_url | absolute_url }}">{{ tag }}</a></li>
-      {%- endfor -%}
-    </ul>
+  <svg class="svg-icon grey"><use xlink:href="{{ 'assets/minima-label-icons.svg#tags' | relative_url }}"></use></svg>
+  <span class="tag-list">
+    {%- assign tags = page.tags | sort -%}
+    {%- for tag in tags -%}
+      {%- capture tag_url -%}{{ site.minima.tags_url }}#{{ tag | slugify }}{%- endcapture -%}
+      <a class="tag" href="{{ tag_url | absolute_url }}">{{ tag }}</a>
+    {%- endfor -%}
   </span>
 </div>
 <script src="{{ '/assets/js/tag-color.js' | absolute_url }}"></script>
