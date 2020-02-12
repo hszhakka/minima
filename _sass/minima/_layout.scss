@@ -252,8 +252,8 @@
   padding-top: $spacing-unit * 2;
   padding-bottom: $spacing-unit * 2;
   margin-bottom: $spacing-unit;
-  background-color: $brand-color-light;
-  border-bottom: 1px solid $brand-color-dark;
+  background-color: mix($brand-color-light, $background-color);
+  border-bottom: 1px solid $brand-color-light;
 }
 
 .post-title,
