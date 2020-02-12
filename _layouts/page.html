@@ -4,20 +4,24 @@ layout: default
 <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+    <div class="wrapper">
+      <h1 class="post-title">{{ page.title | escape | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+    </div>
   </header>
 
-  {%- if page.toc -%}
-    <div class="toc-wrapper">
-      <h2>Table of Contents</h2>
-      <nav class="toc">
-        {%- include toc.html html=content -%}
-      </nav>
+  <div class="wrapper">
+    {%- if page.toc -%}
+      <div class="toc-wrapper">
+        <h2>Table of Contents</h2>
+        <nav class="toc">
+          {%- include toc.html html=content -%}
+        </nav>
+      </div>
+    {%- endif -%}
+    
+    <div class="post-content">
+      {{ content }}
     </div>
-  {%- endif -%}
-
-  <div class="post-content">
-    {{ content }}
   </div>
 
 </article>

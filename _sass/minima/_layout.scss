@@ -13,7 +13,7 @@
 
 .site-title {
   @include relative-font-size(1.625);
-  font-weight: 300;
+  font-weight: $base-font-weight * 2;
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
@@ -31,7 +31,7 @@
 .site-nav {
   position: absolute;
   z-index: 1;
-  top: 9px;
+  top: $base-line-height * $base-font-size * 0.8;
   right: $spacing-unit / 2;
   background-color: $background-color;
   border: 1px solid $brand-color-light;
@@ -198,7 +198,7 @@
  * Page content
  */
 .page-content {
-  padding: $spacing-unit 0;
+  padding: 0;
   flex: 1 0 auto;
 }
 
@@ -213,9 +213,25 @@
 .post-list {
   margin-left: 0;
   list-style: none;
+  padding-top: $spacing-unit;
 
-  > li {
-    margin-bottom: $spacing-unit;
+  .post-item {
+    margin-bottom: $spacing-unit * 1.266;
+    padding-bottom: $spacing-unit * 1.266;
+    border-bottom: 1px solid $brand-color-light;
+  }
+
+  .post-title {
+    font-size: $base-font-size * 1.875;
+    letter-spacing: -.5px;
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
+
+  .post-excerpt {
+    font-family: $reading-font-family;
+    font-size: $base-font-size * 1.125;
+    margin-top: $spacing-unit * 0.5;
   }
 }
 
@@ -226,16 +242,18 @@
 
 .post-link {
   display: block;
-  @include relative-font-size(1.5);
 }
-
 
 
 /**
  * Posts
  */
 .post-header {
+  padding-top: $spacing-unit * 2;
+  padding-bottom: $spacing-unit * 2;
   margin-bottom: $spacing-unit;
+  background-color: $brand-color-light;
+  border-bottom: 1px solid $brand-color-dark;
 }
 
 .post-title,
@@ -243,6 +261,7 @@
   @include relative-font-size(2.625);
   letter-spacing: -1px;
   line-height: 1.15;
+  font-weight: $base-font-weight * 1.5;
 
   @media screen and (min-width: $on-large) {
     @include relative-font-size(2.625);
@@ -251,6 +270,22 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
+
+  font-family: $reading-font-family;
+  font-size: $base-font-size * 1.05;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $base-font-family;
+    font-weight: $base-font-weight * 1.5;
+  }
+
+  h1, h2, h3 { 
+    margin-top: $spacing-unit * 2; 
+  }
+
+  h4, h5, h6 { 
+    margin-top: $spacing-unit; 
+  }
 
   h2 {
     @include relative-font-size(1.75);
@@ -390,15 +425,19 @@
   background-color: mix($background-color, $text-color, 90%);
   padding: 8px 8px 8px 8px;
   border-radius: 8px;
-  position: fixed;
-  left: $spacing-unit;
-  top: $spacing-unit * 3.5;
+  position: sticky;
+  float: right;
+  top: $spacing-unit;
+  bottom: $spacing-unit;
+  margin-right: calc((#{$content-width} - 100vw) / 2);
   width: calc((100vw - #{$content-width}) / 2 - #{$spacing-unit} * 2);
 
   @include media-query($on-huge) {
     position: relative;
-    left: auto;
+    float: none;
     top: auto;
+    bottom: auto;
+    margin-right: auto;
     width: auto;
     margin-bottom: $spacing-unit;
   }
@@ -406,7 +445,7 @@
 
 .toc {
   margin: 5px 5px 5px 5px;
-  max-height: calc(40vh);
+  max-height: calc(61.8vh);
   overflow: scroll;
 
   ul {
