@@ -4,7 +4,7 @@
     {%- assign categories = page.categories | sort -%}
     {%- for category in categories -%}
       {%- capture category_url -%}{{ site.minima.categories_url }}#{{ category | slugify }}{%- endcapture -%}
-      <a class="category" href="{{ category_url | absolute_url }}">{{ category }}</a>
+      <a class="category" href="{{ category_url | relative_url }}">{{ category }}</a>
     {%- endfor -%}
   </span>
 </div>

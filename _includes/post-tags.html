@@ -4,8 +4,8 @@
     {%- assign tags = page.tags | sort -%}
     {%- for tag in tags -%}
       {%- capture tag_url -%}{{ site.minima.tags_url }}#{{ tag | slugify }}{%- endcapture -%}
-      <a class="tag" href="{{ tag_url | absolute_url }}">{{ tag }}</a>
+      <a class="tag" href="{{ tag_url | relative_url }}">{{ tag }}</a>
     {%- endfor -%}
   </span>
 </div>
-<script src="{{ '/assets/js/tag-color.js' | absolute_url }}"></script>
+<script src="{{ '/assets/js/tag-color.js' | relative_url }}"></script>

@@ -21,7 +21,7 @@ layout: page
         {%- if posts.size == i -%}
           <li>
             {%- capture category_url -%}{{ site.minima.categories_url }}#{{ category_name | slugify }}{%- endcapture -%}
-            <a class="category" href="{{ category_url | absolute_url }}">{{ category_name }}</a> <small>{{ posts.size }}</small>
+            <a class="category" href="{{ category_url | relative_url }}">{{ category_name }}</a> <small>{{ posts.size }}</small>
           </li>
         {%- endif -%}
       {%- endfor -%}

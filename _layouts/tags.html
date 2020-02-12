@@ -21,15 +21,15 @@ layout: page
         {%- if posts.size == i -%}
           {%- capture tag_url -%}{{ site.minima.tags_url }}#{{ tag_name | slugify }}{%- endcapture -%}
           {%- capture title -%}{{ posts.size }} {% if posts.size == 1 %}post{% else %}posts{% endif %}{%- endcapture -%}
-          <a class="tag" href="{{ tag_url | absolute_url }}" title="{{ title }}" data-count="{{ posts.size }}">{{ tag_name }}</a>
+          <a class="tag" href="{{ tag_url | relative_url }}" title="{{ title }}" data-count="{{ posts.size }}">{{ tag_name }}</a>
         {%- endif -%}
       {%- endfor -%}
     {%- endfor -%}
   </span>
 </div>
 
-<script src="{{ '/assets/js/tag-color.js' | absolute_url }}"></script>
-<script src="{{ '/assets/js/tag-size.js' | absolute_url }}"></script>
+<script src="{{ '/assets/js/tag-color.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/tag-size.js' | relative_url }}"></script>
 
 {%- for i in (1..max_count) reversed -%}
   {%- for tag in site.tags -%}
