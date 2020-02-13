@@ -420,7 +420,7 @@
 .post-list-by-category, 
 .post-list-by-tag {
   time {
-    font-family: "Menlo", "Courier New", "Inconsolata", "Monospace";
+    font-family: $code-font-family;
   }
 }
 
