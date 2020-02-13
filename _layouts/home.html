@@ -27,7 +27,7 @@ layout: default
       <li class="post-item">
         <h3 class="post-title">
           <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape | markdownify | remove: "<p>" | remove: "</p>" }}
+            {{ post.title | escape }}
           </a>
         </h3>
 
