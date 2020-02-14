@@ -417,6 +417,12 @@
   }
 }
 
+.post-list-by-taxonomy {
+  time {
+    font-family: $code-font-family;
+  }
+}
+
 .back-to-top {
   display: block;
   font-size: $base-font-size * 0.8;
