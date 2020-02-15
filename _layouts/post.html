@@ -59,6 +59,10 @@ layout: default
     <div class="post-content e-content" itemprop="articleBody">
       {{ content }}
     </div>
+
+    {%- if page.share -%}
+      {%- include share.html -%}
+    {%- endif -%}
     
     {%- if site.disqus.shortname -%}
       {%- include disqus_comments.html -%}
