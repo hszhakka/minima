@@ -1,0 +1,33 @@
+<!-- Begin favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- End favicons -->
+
+<!-- Switch skin according to hours -->
+<script>
+  const hour = (new Date()).getHours();
+  let filename = "";
+  if (hour >= 6 && hour < 8) {
+    filename = "{{ '/assets/css/style-solarized.css' | relative_url }}";
+  } else if (hour >= 8 && hour < 16) {
+    filename = "{{ '/assets/css/style-classic.css' | relative_url }}";
+  } else if (hour >= 16 && hour < 18) {
+    filename = "{{ '/assets/css/style-solarized.css' | relative_url }}";
+  } else {
+    filename = "{{ '/assets/css/style-solarized-dark.css' | relative_url }}";
+  }
+  const elem = document.createElement("link");
+  elem.setAttribute("rel", "stylesheet");
+  elem.setAttribute("type", "text/css");
+  elem.setAttribute("href", filename);
+  document.getElementsByTagName("head")[0].appendChild(elem);
+</script>
+
+{% if page.math %}
+  {% include mathjax.html %}
+{% endif %}
